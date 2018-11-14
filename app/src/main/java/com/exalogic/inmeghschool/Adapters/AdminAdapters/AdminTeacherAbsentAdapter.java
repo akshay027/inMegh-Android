@@ -1,0 +1,80 @@
+package com.exalogic.inmeghschool.Adapters.AdminAdapters;
+
+import android.app.Activity;
+import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.exalogic.inmeghschool.Activities.AdminActivities.CircleTransform;
+import com.exalogic.inmeghschool.Models.AdminModels.NoticeBoard.AdminTeacherAbsent;
+import com.exalogic.inmeghschool.R;
+import com.squareup.picasso.Picasso;
+
+import java.util.List;
+
+import static com.exalogic.inmeghschool.Utility.Constants.context;
+
+/**
+ * Created by Exalogic on 10-Mar-17.
+ */
+
+public class AdminTeacherAbsentAdapter extends BaseAdapter {
+    private final LayoutInflater inflater;
+    private Activity activity;
+    private List<AdminTeacherAbsent> arrayList;
+
+    public AdminTeacherAbsentAdapter(Activity activity, List<AdminTeacherAbsent> arrayList) {
+        this.activity = activity;
+        this.arrayList = arrayList;
+        inflater = (LayoutInflater) activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+    }
+
+    @Override
+    public int getCount() {
+        return arrayList.size();
+    }
+
+    @Override
+    public Object getItem(int position) {
+        return null;
+    }
+
+    @Override
+    public long getItemId(int position) {
+        return arrayList.size();
+    }
+
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
+
+        AdminTeacherAbsentAdapter.ViewHolder holder;
+        AdminTeacherAbsent adminAbsent= arrayList.get(position);
+        if (convertView == null) {
+            convertView = inflater.inflate(R.layout.list_item_admin_teacher_absent, null);
+            holder = new AdminTeacherAbsentAdapter.ViewHolder();
+            holder.tv_name = (TextView) convertView.findViewById(R.id.tv_name);
+
+            holder.tv_empno = (TextView) convertView.findViewById(R.id.tv_empno);
+            holder.imageview=(ImageView)convertView.findViewById(R.id.imageview);
+            convertView.setTag(holder);
+        } else {
+            holder = (AdminTeacherAbsentAdapter.ViewHolder) convertView.getTag();
+        }
+        Picasso.with(context).load(adminAbsent.getPhoto()).resize(50, 50)
+                .transform(new CircleTransform()).into(holder.imageview);
+        holder.tv_name.setText(("" + adminAbsent.getName()));
+        holder.tv_empno.setText("" + adminAbsent.getEmpCode());
+
+        return convertView;
+    }
+
+    static class ViewHolder {
+        ImageView imageview;
+        TextView tv_name, tvLeaveType, tvclass,tv_empno;
+    }
+}
+

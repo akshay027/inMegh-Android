@@ -1,0 +1,73 @@
+apply plugin: 'com.android.application'
+
+android {
+    // SDK 24 worked for me - make sure you have the latest and update it accordingly.
+    compileSdkVersion 27
+    buildToolsVersion '27.0.3'
+    defaultConfig {
+        applicationId "com.exalogic.inmeghschool"
+        minSdkVersion 15
+        targetSdkVersion 27
+        versionCode 12
+        versionName "1.1.9"
+        multiDexEnabled true
+        vectorDrawables.useSupportLibrary = true
+    }
+    lintOptions {
+        checkReleaseBuilds false
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    dexOptions {
+
+        javaMaxHeapSize "4g"
+      // 2g should be also OK
+    }
+    productFlavors {
+    }
+}
+repositories {
+    maven {
+        url "https://mint.splunk.com/gradle/"
+    }
+}
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    //implementation 'com.android.support:design:25.0.0'
+
+    // implementation 'com.google.maps.android:android-maps-utils:0.4.+'
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'com.appboy:android-sdk-ui:2.0.+'
+    implementation 'org.jsoup:jsoup:1.10.1'
+    testImplementation 'org.assertj:assertj-core:2.0.0'
+    testImplementation 'org.testng:testng:6.9.10'
+    implementation 'com.squareup.picasso:picasso:2.5.2'
+    implementation 'com.android.support:support-v4:26.1.0'
+    implementation 'com.squareup.retrofit:retrofit:1.9.0'
+    implementation 'com.razorpay:checkout:1.4.0'
+    implementation 'com.squareup.okhttp:okhttp-urlconnection:2.0.0'
+    implementation 'com.squareup.okhttp:okhttp:2.0.0'
+    implementation 'com.android.support:design:26.1.0'
+    implementation 'com.github.satyan:sugar:1.5'
+    implementation 'com.google.android.gms:play-services:11.8.0'
+    implementation 'com.google.firebase:firebase-messaging:11.8.0'
+    implementation 'com.google.android.gms:play-services-ads:11.8.0'
+    implementation 'com.google.android.gms:play-services-auth:11.8.0'
+    implementation 'com.google.android.gms:play-services-gcm:11.8.0'
+    implementation 'com.google.maps.android:android-maps-utils:0.5+'
+    implementation 'com.android.support:multidex:1.0.1'
+    implementation 'com.mcxiaoke.volley:library:1.0.0'
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.0.0'
+    implementation 'de.hdodenhof:circleimageview:2.1.0'
+    implementation 'com.android.support:recyclerview-v7:27.1.1'
+    implementation 'jp.wasabeef:picasso-transformations:2.1.0'
+    implementation 'com.github.sundeepk:compact-calendar-view:2.0.2.1'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.0-alpha4'
+    implementation 'com.prolificinteractive:material-calendarview:1.4.3'
+    testImplementation 'junit:junit:4.12'
+}
+apply plugin: 'com.google.gms.google-services'

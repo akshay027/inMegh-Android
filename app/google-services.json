@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "500816244722",
+    "firebase_url": "https://inmegh-school.firebaseio.com",
+    "project_id": "inmegh-school",
+    "storage_bucket": "inmegh-school.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:500816244722:android:191baa03073eb54a",
+        "android_client_info": {
+          "package_name": "com.exalogic.inmeghschool"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "500816244722-0sben6kalv9vm3gcv0msuqvhockel0o9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDA3BkW1_SkQgU3hYxA69hCuc9V6_JKsG4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

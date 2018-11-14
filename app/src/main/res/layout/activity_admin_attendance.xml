@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#efefef"
+    android:orientation="vertical"
+    android:layout_margin="8dp"
+    tools:context="com.exalogic.inmeghschool.Activities.AdminActivities.AdminAttendanceActivity">
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_adminattendance"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/textview"
+        android:background="@color/white"></android.support.v7.widget.RecyclerView>
+
+    <TextView
+        android:id="@+id/tv_noattendancedata"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="No Assignment To Show"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/red"
+        android:textStyle="bold"
+        android:visibility="gone" />
+</LinearLayout>
